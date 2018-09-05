@@ -15,6 +15,7 @@ enum FileAttributes : uint8_t {
 };
 
 class Time {
+public:
     inline uint8_t hour() const { return static_cast<uint8_t>(data >> 11); }
 
     inline uint8_t minutes() const { return static_cast<uint8_t>((data >> 5) & 0b00111111); }
@@ -26,7 +27,8 @@ private:
 };
 
 class Date {
-    inline uint8_t year() const { return static_cast<uint8_t>((data >> 9) + 1980); }
+public:
+    inline uint16_t year() const { return static_cast<uint16_t>(static_cast<uint8_t>((data >> 9)) + 1980); }
 
     inline uint8_t month() const { return static_cast<uint8_t>((data >> 5) & 0b00001111); }
 
