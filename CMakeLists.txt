@@ -3,4 +3,4 @@ project(fat12_extractor_cpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(fat12_extractor_cpp main.cpp)
+add_executable(fat12_extractor_cpp main.cpp BootSector.hpp utils.hpp FAT12Entry.hpp Disk.cpp Disk.hpp File.hpp FAT.hpp Directory.cpp Directory.hpp FIle.cpp)
